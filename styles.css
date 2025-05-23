@@ -1,0 +1,123 @@
+
+
+ body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 200%;
+    text-align: center;
+    background-image: url(scenery2.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 2, 2, 0.7); /* Adjust opacity here */
+    z-index: -1; /* Places it behind content */
+}
+
+
+.filter-buttons {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #0008ff;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #b30095;
+    transform: scale(1.1);
+}
+
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.image {
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+.image:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+} 
+
+ 
+/* Enhanced Image Wrapper */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease-in-out, opacity 0.4s ease-in-out, box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+/* Image Styling with Zoom & Slight Rotate */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+}
+
+/* Breathing animation (box shadow pulse) */
+@keyframes shadowPulse {
+    0%, 100% {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* Hover Animation on Gallery Item */
+.gallery-item:hover {
+    transform: scale(1.05) rotateZ(1deg);
+    animation: shadowPulse 1.5s infinite ease-in-out;
+}
+
+/* Hover Animation on Image */
+.gallery-item:hover img {
+    transform: scale(1.15) translateY(-5px);
+}

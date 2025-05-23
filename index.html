@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Filter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1>Image Gallery</h1>
+            <p>Filter and explore different categories</p>
+        </header>
+
+    <div class="filter-buttons">
+        <button onclick="filterImages('all')">All</button>
+        <button onclick="filterImages('nature')">Nature</button>
+        <button onclick="filterImages('people')">People</button>
+        <button onclick="filterImages('tech')">Tech</button>
+    </div>
+
+    <div class="gallery">
+        <img src="nature1.jpg" class="image nature" alt="Nature">
+        <img src="nature2.jpg" class="image nature" alt="Nature">
+        <img src="people1.jpg" class="image people" alt="People">
+        <img src="people2.jpg" class="image people" alt="People">
+        <img src="tech1.jpg" class="image tech" alt="Tech">
+        <img src="tech2.jpg" class="image tech" alt="Tech">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
+
